@@ -114,16 +114,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
         </div>
       </nav>
 
-      {/* Mobile Menu Button */}
-      <Button
-        variant="outline"
-        size="icon"
-        className="fixed top-4 left-4 z-50 lg:hidden bg-background/80 backdrop-blur-sm"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </Button>
-
       {/* Mobile Sidebar */}
       <aside className={`
         fixed left-0 top-0 h-full bg-sidebar text-sidebar-foreground transition-transform duration-300 z-40 lg:hidden
