@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Home, 
@@ -206,9 +205,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
           <div className="bg-sidebar-accent rounded-lg p-4">
             <p className="text-sm text-sidebar-foreground/60 mb-2">{t('common.needHelp')}</p>
             <p className="text-xs text-sidebar-foreground/40">{t('common.supportDesc')}</p>
-            <Button size="sm" variant="outline" className="mt-3 w-full">
-              {t('common.getSupport')}
-            </Button>
+            <a href="#contact">
+              <Button size="sm" variant="outline" className="mt-3 w-full">
+                {t('common.getSupport')}
+              </Button>
+            </a>
           </div>
         </div>
       </aside>
