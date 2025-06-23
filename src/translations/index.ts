@@ -120,7 +120,7 @@ export const translations = {
     },
     common: {
       needHelp: 'Need Help?',
-      supportDesc: 'Contact our support team for assistance',
+      supportDesc: 'Contact us for assistance',
       getSupport: 'Get Support',
       switchTheme: 'Switch Theme',
       switchLanguage: 'Switch Language'
@@ -246,7 +246,7 @@ export const translations = {
   },
   common: {
     needHelp: 'Yardıma mı ihtiyacınız var?',
-    supportDesc: 'Destek ekibimiz her zaman hizmetinizde',
+    supportDesc: 'Yardım için bizimle iletişime geçin',
     getSupport: 'Destek Alın',
     switchTheme: 'Temayı Değiştir',
     switchLanguage: 'Dili Değiştir'
@@ -372,7 +372,7 @@ export const translations = {
   },
   common: {
     needHelp: 'هل تحتاج مساعدة؟',
-    supportDesc: 'فريق الدعم جاهز لمساعدتك',
+    supportDesc: 'اتصل بنا للحصول على المساعدة',
     getSupport: 'الحصول على الدعم',
     switchTheme: 'تغيير النمط',
     switchLanguage: 'تغيير اللغة'
