@@ -1,0 +1,119 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Design System for SWIFT */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+    --sidebar-background: 221 39% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 221 25% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 221 25% 20%;
+    --sidebar-ring: 43 96% 56%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 221 39% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 221 39% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 221 25% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 221 25% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 221 25% 20%;
+    --input: 221 25% 20%;
+    --ring: 221 83% 53%;
+    --sidebar-background: 221 39% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 221 25% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 221 25% 20%;
+    --sidebar-ring: 43 96% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-card/80;
+  }
+  
+  .service-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 card-hover;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
