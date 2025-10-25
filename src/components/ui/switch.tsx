@@ -1,32 +1,19 @@
 import * as React from "react"
 import * as SwitchPrimitives from "@radix-ui/react-switch"
+
 import { cn } from "@/lib/utils"
 
-const Switch = React.forwardRef
+interface SwitchProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> {
+  // Optional: you can pass rtl explicitly or detect automatically
+  rtl?: boolean;
+}
+
+const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => {
-  const [isRTL, setIsRTL] = React.useState(false)
-
-  React.useEffect(() => {
-    // Check if the document direction is RTL
-    const checkDirection = () => {
-      const dir = document.documentElement.dir || document.body.dir || 
-                  getComputedStyle(document.documentElement).direction
-      setIsRTL(dir === 'rtl')
-    }
-
-    checkDirection()
-
-    // Create observer to watch for direction changes
-    const observer = new MutationObserver(checkDirection)
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['dir']
-    })
-
-    return () => observer.disconnect()
-  }, [])
+  SwitchProps
+>(({ className, rtl, ...props }, ref) => {
+  // Auto-detect RTL if rtl prop is not provided
+  const isRTL = rtl ?? (typeof document !== "undefined" && document.dir === "rtl");
 
   return (
     <SwitchPrimitives.Root
@@ -40,15 +27,16 @@ const Switch = React.forwardRef
       <SwitchPrimitives.Thumb
         className={cn(
           "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform",
+          // Positioning for LTR/RTL
           isRTL
-            ? "data-[state=checked]:translate-x-0 data-[state=unchecked]:translate-x-5"
+            ? "data-[state=checked]:translate-x-0 data-[state=unchecked]:translate-x-[-20px]"
             : "data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
         )}
       />
     </SwitchPrimitives.Root>
-  )
-})
+  );
+});
 
-Switch.displayName = SwitchPrimitives.Root.displayName
+Switch.displayName = SwitchPrimitives.Root.displayName;
 
 export { Switch }
