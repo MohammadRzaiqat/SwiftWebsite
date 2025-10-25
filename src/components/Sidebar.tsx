@@ -206,7 +206,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
             <p className="text-sm text-sidebar-foreground/60 mb-2">{t('common.needHelp')}</p>
             <p className="text-xs text-sidebar-foreground/40">{t('common.supportDesc')}</p>
             <a href="#contact">
-              <Button size="sm" variant="outline" className="mt-3 w-full text-black">
+              <Button size="sm" variant="outline" className="mt-3 w-full text-black dark:text-white">
                 {t('common.getSupport')}
               </Button>
             </a>
