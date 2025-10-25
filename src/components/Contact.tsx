@@ -58,18 +58,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: t('contact.phone'),
-      details: ["+90 212 555 1234"],
+      details: ["+90 212 671 31 33"],
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@swift-trade.com", "support@swift-trade.com"],
+      details: ["swiftticaret@gmail.com"],
     },
     {
       icon: MapPin,
       title: t('contact.address'),
-      details: ["İkitelli, Istanbul Turkey"],
-      action: "https://maps.app.goo.gl/bkPdMSSTAUsyhsBD9"
+      details: ["İkitelli OSB MAH., Istanbul Turkey"],
+      action: "https://maps.app.goo.gl/vgMb6eDXLunkQAZEA"
     },
     {
       icon: Clock,
