@@ -131,7 +131,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
         w-72 border-r border-sidebar-border
       `}>
         <div className="p-6">
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-8 ml-10">
             <div className="w-10 h-10 bg-sidebar-primary rounded-lg flex items-center justify-center">
               <TrendingUp className="w-6 h-6 text-sidebar-primary-foreground" />
             </div>
@@ -206,7 +206,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
             <p className="text-sm text-sidebar-foreground/60 mb-2">{t('common.needHelp')}</p>
             <p className="text-xs text-sidebar-foreground/40">{t('common.supportDesc')}</p>
             <a href="#contact">
-              <Button size="sm" variant="outline" className="mt-3 w-full">
+              <Button size="sm" variant="outline" className="mt-3 w-full text-black">
                 {t('common.getSupport')}
               </Button>
             </a>
